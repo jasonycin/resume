@@ -10,5 +10,7 @@ export default defineConfig({
   site: 'http://localhost:4321',
   integrations: [svelte(), sitemap(), tailwind(), react()],
   output: "server",
-  adapter: vercel()
+  adapter: vercel({
+    webAnalytics: { enabled: true }
+  })
 });
