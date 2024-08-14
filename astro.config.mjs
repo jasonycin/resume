@@ -8,9 +8,17 @@ import vercel from "@astrojs/vercel/serverless";
 // https://astro.build/config
 export default defineConfig({
   site: 'http://localhost:4321',
-  integrations: [svelte(), sitemap(), tailwind(), react()],
+  integrations: [
+    svelte(),
+    sitemap(),
+    tailwind({
+      applyBaseStyles: false,
+      nesting: true
+    }),
+    react()
+  ],
   output: "server",
   adapter: vercel({
     webAnalytics: { enabled: true }
-  })
+  }),
 });

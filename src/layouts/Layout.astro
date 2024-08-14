@@ -1,11 +1,16 @@
 ---
-import  SpeedInsights  from "@vercel/speed-insights/astro";
-
+import SpeedInsights  from "@vercel/speed-insights/astro";
 interface Props {
 	title: string;
 }
 
 const { title } = Astro.props;
+import {
+	ContextMenu,
+	ContextMenuContent,
+	ContextMenuItem,
+	ContextMenuTrigger,
+} from "@/components/ui/context-menu"
 ---
 
 <!doctype html>
@@ -20,7 +25,9 @@ const { title } = Astro.props;
 	</head>
 	<SpeedInsights />
 	<body>
-		<slot />
+	
+
+	<slot />
 	</body>
 </html>
 <style is:global>
@@ -37,7 +44,7 @@ const { title } = Astro.props;
 	}
 	html {
 		font-family: system-ui, sans-serif;
-		background: #13151a;
+		background: #f1f1f1;
 		background-size: 224px;
 	}
 	code {
