@@ -1,16 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import '../styles/globals.css';
 import landingSVG from '../images/landing_bg.svg'
+import Header from "../components/Header.astro";
 ---
 
 <Layout title="Jason LaPierre">
-	<section class="relative min-h-screen overflow-hidden">
-		<div class="absolute inset-0 -z-10 bg-cover bg-no-repeat bg-center" style={`background-image: url('${landingSVG['src']}');`}></div>
-		<div class="relative flex flex-col items-center justify-center min-h-screen text-white">
+	<div class="absolute inset-0 -z-20 bg-cover bg-no-repeat bg-center" style={`background-image: url('${landingSVG['src']}');`}></div>
+
+	<section>
+		<Header />
+		<div>
 			<!-- Your main content here -->
-			<h1 class="text-4xl md:text-6xl">Welcome to My Site</h1>
-			<p class="mt-4 text-xl">Some introduction text or a call to action.</p>
 		</div>
 	</section>
 </Layout>
