@@ -20,8 +20,8 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<SpeedInsights />
+	<div class="absolute inset-0 z-50 bg-cover bg-no-repeat bg-center pointer-events-none" style={`background-image: url('${noiseSVG['src']}');`}>	</div>
 	<body>
-	<div class="absolute inset-0 -z-10 bg-cover bg-no-repeat bg-center" style={`background-image: url('${noiseSVG['src']}');`}>	</div>
 	<slot />
 	</body>
 </html>
@@ -63,10 +63,6 @@ const { title } = Astro.props;
 		height: 100vh;
 		pointer-events: none;
 		z-index: 50;
-		background:
-			linear-gradient(90deg, rgba(0, 0, 0, 0.02) 50%, transparent 50%),
-			linear-gradient(0deg, rgba(0, 0, 0, 0.02) 50%, transparent 50%);
-		background-size: 2px 2px;
 		opacity: 0.3;
 	}
 </style>

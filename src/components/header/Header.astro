@@ -1,0 +1,23 @@
+---
+import Github from './icons8-github.svg';
+import LinkedIn from './icons8-linkedin.svg';
+import { Image } from 'astro:assets';
+---
+
+<div class="m-3 flex flex-row justify-between">
+    <a href="/public" class="logo uppercase font-bold text-4xl">
+        <span>Jason LaPierre</span>
+    </a>
+
+    <div class="flex flex-row gap-4">
+        <a href="https://www.linkedin.com/in/jason-lapie/" target="_blank">
+            <Image src={LinkedIn} alt="LinkedIn" class="w-10 h-10" />
+        </a>
+        <a href="https://www.linkedin.com/in/jason-lapie/" target="_blank">
+            <Image src={Github} alt="Github" class="w-10 h-10 " />
+        </a>
+    </div>
+</div>
+
+<style>
+</style>
