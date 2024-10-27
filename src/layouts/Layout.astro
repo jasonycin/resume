@@ -1,5 +1,8 @@
 ---
 import SpeedInsights  from "@vercel/speed-insights/astro";
+import '../styles/globals.css';
+import noiseSVG from "../images/noise.svg";
+import Copyright from "../components/copyright/Copyright.astro";
 interface Props {
 	title: string;
 }
@@ -18,11 +21,13 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<SpeedInsights />
+	<div class="absolute inset-0 z-50 bg-cover bg-no-repeat bg-center pointer-events-none" style={`background-image: url('${noiseSVG['src']}');`}>	</div>
 	<body>
-	
-
-	<slot />
+		<slot />
 	</body>
+	<footer>
+		<Copyright/>
+	</footer>
 </html>
 <style is:global>
 	:root {
@@ -37,7 +42,8 @@ const { title } = Astro.props;
 		);
 	}
 	html {
-		font-family: system-ui, sans-serif;
+		font-family: "Futura LT", system-ui, sans-serif;
+		color: #393939;
 		background: #f1f1f1;
 		background-size: 224px;
 	}
@@ -51,5 +57,16 @@ const { title } = Astro.props;
 			Bitstream Vera Sans Mono,
 			Courier New,
 			monospace;
+	}
+	body::before {
+		content: "";
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		pointer-events: none;
+		z-index: 50;
+		opacity: 0.3;
 	}
 </style>
